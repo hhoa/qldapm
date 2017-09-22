@@ -1,0 +1,73 @@
+<div class="container main-page contact-form" ng-controller="ContactUsController">
+    <p class="title">Contact Us</p>
+
+    <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.634335073531!2d106.6798381153384!3d10.762639092330948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3d!2sUniversity+of+Science%2C+Downtown+Campus!5e0!3m2!1sen!2s!4v1505443163735" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="row">
+                <div ng-if="message_success" class="message-success">{{message_success}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="row">
+                <h4 class="has_border_bottom">THÔNG TIN LIÊN HỆ</h4>
+            </div>
+            <form role="form" id="contact-form" class="contact-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <p>Tên<span class="required-frontend">*</span></p>
+                            <input type="text" name="name" ng-model="name" autocomplete="off" id="name">
+                            <div ng-if="name_err" class="text-italic-err">{{name_err}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <p>Email<span class="required-frontend">*</span></p>
+                            <input type="email" name="email" ng-model="email" autocomplete="off" id="email">
+                            <div ng-if="email_err" class="text-italic-err">{{email_err}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p>Lời nhắn<span class="required-frontend">*</span></p>
+                            <textarea rows="6" name="message" ng-model="message" id="message"></textarea>
+                            <div ng-if="message_err" class="text-italic-err">{{message_err}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="row pull-left"><span class="required-frontend">* Thông tin bắt buộc nhập</span></p>
+                        <button type="submit" ng-click="sendMessage()" class="button-main pull-right">Gửi</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="row">
+                <h4 class="has_border_bottom">ĐỊA CHỈ LIÊN HỆ</h4>
+            </div>
+            <div class="row">
+                <p style="border-bottom: 1px dotted #c2c2c2;"><i class="fa fa-envelope" aria-hidden="true"></i> Email</p>
+                <p class="a-color-pink">info@qlpmnhom2.com</p>
+            </div>
+            <div class="row">
+                <p style="border-bottom: 1px dotted #c2c2c2;"><i class="fa fa-phone-square" aria-hidden="true"></i> Di Động</p>
+                <p class="a-color-pink">0968 930 224</p>
+            </div>
+            <div class="row">
+                <p style="border-bottom: 1px dotted #c2c2c2;"><i class="fa fa-crosshairs" aria-hidden="true"></i> Địa Chỉ</p>
+                <p class="a-color-pink">Nhóm 2, P. C42 Lớp QLYCPM</p>
+            </div>
+        </div>
+    </div>
+</div>

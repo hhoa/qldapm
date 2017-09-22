@@ -1,0 +1,12 @@
+.dash-board-a{
+    color: white;
+    font-size: 14px;
+    padding: 20px;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+.dash-board-a:hover{
+    text-decoration: none;
+    color: white;
+}

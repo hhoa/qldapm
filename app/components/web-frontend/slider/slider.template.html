@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="slide in slides">
+        <a href="{{slide.href}}">
+            <img ng-src="{{slide.url}}" class="img">
+        </a>
+    </li>
+</ul>
+<i class="next material-icons fa fa-angle-right" ng-click="next()"></i>
+<i class="material-icons prev fa fa-angle-left" ng-click="prev()"></i>

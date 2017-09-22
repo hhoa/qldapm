@@ -1,0 +1,63 @@
+header {
+    text-align: center;
+    color: #fff;
+    background: #18bc9c;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    top: 60px;
+    left: 0;
+}
+
+.navbar {
+    min-height: 60px !important;
+    background: white !important;
+}
+
+.navbar-brand {
+    line-height: 30px !important;
+    height: auto !important;
+}
+
+.nav-menu {
+    margin-top: 10px;
+}
+
+.navbar .navbar-header .btn-toggle {
+    margin-top: 20px;
+    border: none !important;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #18bc9c;
+}
+
+.content-wrapper {
+    background-color: white;
+    /* top: 87%; */
+    /* min-height: 12%; */
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+/* HERE ENDS THE MAGIC */
+header .container {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.horizontal-navbar__employer-site {
+    border: 1px solid #18bc9c;
+    margin-right: 5px;
+}
+
+.horizontal-navbar__employer-site > a {
+    background: rgba(24, 188, 156, 0.77) !important;
+    color: white !important;
+    font-weight: 400;
+}

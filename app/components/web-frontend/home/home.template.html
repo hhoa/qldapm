@@ -1,0 +1,118 @@
+<div ng-if="slides.length > 0" class="slider" slides="slides" delay="3000" max-w="2048" max-h="1000"></div>
+
+<div class="content-wrapper" ng-controller="homeCtrl">
+    <section class="primary" id="portfolio" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Dịch Vụ</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <a class="a-de-cus" href="/viec-lam-chuyen-mon" title="Việc làm yêu cầu chuyên môn, bằng cấp">
+                        <img class="img-feature" src="/media/cms/base/feature-01.png">
+                        <p class="a-none-background-333 field">Việc làm Chuyên môn</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <a class="a-de-cus" href="/lao-dong-pho-thong" title="Việc làm cho lao động phổ thông, không bằng cấp">
+                        <img class="img-feature" src="/media/cms/base/feature-02.png">
+                        <p class="a-none-background-333 field">Việc làm Lao động Phổ Thông</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <a class="a-de-cus" href="/sinh-vien-ban-thoi-gian" title="Việc làm cho sinh viên, việc làm bán thời gian">
+                        <img class="img-feature" src="/media/cms/base/feature-03.png">
+                        <p class="a-none-background-333 field">Việc làm cho Sinh viên - Bán thời gian</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="home-title-employer"><a class="a-de-cus" href="/nha-tuyen-dung" title="Trang thông tin cho nhà tuyển dụng" style="color: #5bc0de;">TRANG CHO NHÀ TUYỂN DỤNG</a></h2>
+                    <p class="text-center">Hồ sơ người tìm việc đáng tin cậy cho bạn</p>
+                    <p>
+                        <a href="/nha-tuyen-dung" style="color: white; background: #f0ad4e; padding: 5px 30px;">TÌM NGAY <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Về chúng tôi</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Vietlamnhanh.com được phát triển bởi nhóm Những người bạn môn Quản Lý Dự Án Phần Mềm - 2017. Là một website cung cấp dịch vụ đăng tuyển và tìm kiếm việc làm cho những cá nhân có nhu cầu tìm ứng viên cũng như tìm việc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="primary" id="contact">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>ĐĂNG KÝ NHẬN TƯ VẤN</h2>
+                        <hr class="star-primary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <form name="sentMessage" id="contactForm" novalidate="">
+                            <div class="row control-group">
+                                <div class="field col-xs-12 floating-label-form-group controls">
+                                    <label>Tên<span class="required-frontend">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Tên" id="name" ng-model="name">
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="field-20 col-xs-12 floating-label-form-group controls">
+                                    <label>Địa chỉ Email<span class="required-frontend">*</span></label>
+                                    <input type="email" class="form-control" placeholder="Địa chỉ Email" id="email" ng-model="email">
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="field-20 col-xs-12 floating-label-form-group controls">
+                                    <label>Di động<span class="required-frontend">*</span></label>
+                                    <input type="tel" class="form-control" placeholder="Điện thoại" id="phone" ng-model="phone">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="field-20 col-xs-12 floating-label-form-group controls">
+                                    <label>Tin nhắn<span class="required-frontend">*</span></label>
+                                    <textarea rows="5" class="form-control" placeholder="Nội dung" id="message" ng-model="message"></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <div id="success"></div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="button-main" ng-click="submitFeedBack()" title="Nhận thông tin mới nhất">Gởi</button>
+                                </div>
+                                <div ng-if="is_feed_back_err" class="col-xs-12">
+                                    <p class="text-err">Hãy nhập đủ thông tin tại <span class="required-frontend">*</span></p>
+                                </div>
+                                <div ng-if="is_feed_back_done" class="col-xs-12">
+                                    <p class="text-done">Cảm ơn bạn!</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

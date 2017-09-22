@@ -1,0 +1,72 @@
+section {
+    padding: 100px 0;
+    width: 100%;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 30px;
+}
+hr.star-light,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 1px;
+    text-align: center;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+    content: "\f005";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 17px;
+}
+
+hr.star-light {
+    border-color: #fff;
+}
+
+hr.star-light:after {
+    color: #fff;
+    background-color: #18bc9c;
+}
+
+hr.star-primary {
+    border-color: #777;
+}
+
+hr.star-primary:after {
+    color: #777;
+    background-color: #fff;
+}
+
+section {
+    padding: 50px 0 0 0;
+}
+
+section.primary h2{
+    color: #777;
+}
+
+section.success{
+    background-color: #18bc9c;
+    color: #fff;
+}
+
+.img-feature {
+    width: 100%;
+}
+
+.home-title-employer {
+    padding: 3px 0;
+    border-bottom: 1px dotted #c2c2c2;
+    border-top: 1px dotted #c2c2c2;
+    text-align: center;
+    color: #777;
+}

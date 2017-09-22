@@ -1,0 +1,50 @@
+<div class="admin-main container-fluid">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 18px;">Categories Management</p>
+                    <span class="badge">{{countCategory()}}</span>
+                    <add-new-component ng-click="addNewOnClick()"></add-new-component>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <!--heading-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-header">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">Name</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">Url</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">Title</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">Meta Keywords</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">Meta Descriptions</div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Status</div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Action</div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-body" ng-repeat="cat in category">
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">{{cat.name}}</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">{{cat.url}}</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">{{cat.title}}</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">{{cat.meta_keyword}}</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 not-text-center">{{cat.meta_des}}</div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 text-status">{{getStatus(cat.status)}}</div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button type="button" class="btn btn-danger btn-xs btn-no-background" ng-click="showDialogToEdit($index)" title="Edit this category" style="margin: 3px;">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--<admin-last-update-component></admin-last-update-component>-->
+</div>

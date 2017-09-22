@@ -1,0 +1,39 @@
+ /* Slider */
+.slider {width: 100%; position: relative;}
+.slider ul { position: static; height: 450px; margin-top: 70px; }
+
+@media (max-width: 1025px){
+    .slider ul { height: 400px; }
+}
+@media (max-width: 970px){
+    .slider ul {height: 320px;}
+}
+@media (max-width: 768px){
+    .slider ul {height: 280px;}
+}
+@media (max-width: 640px){
+    .slider ul {height: 250px;}
+}
+@media (max-width: 560px){
+    .slider ul {height: 220px;}
+}
+@media (max-width: 440px){
+    .slider ul {height: 150px;}
+}
+
+.slider .img {width: 100%; position: absolute; top: 0; left: 0; opacity: 0;}
+.slider ul li:first-child a .img { position: absolute; opacity: 1;}
+.slider:hover .next, .slider:hover .prev {opacity: 0.2;}
+.slider .next,
+.slider .prev {font-size: 70px; cursor: pointer; user-select: none;
+    vertical-align: middle; -ms-user-select: none; -webkit-user-select: none; -moz-user-select: none;
+    position: absolute; top: 0; color: #18bc9c; text-shadow: 0 0 2px black; opacity: 0; transition: opacity 1s;
+    width: 100%;}
+.slider .next {right: 0;
+    text-align: right;}
+.slider .prev {left: 0;
+    text-align: left;
+}
+.slider .next:hover, .slider .prev:hover {opacity: 1;}
+
+i.material-icons {  font-size: 20px;  font-style: normal;  vertical-align: middle;  margin-right: 2px;  }

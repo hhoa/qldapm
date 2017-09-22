@@ -1,0 +1,72 @@
+<div class="admin-main container-fluid">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 18px;">Customers Management</p>
+                    <span class="badge">{{countAccount()}}</span>
+                    <add-new-component ng-click="addNewOnClick()"></add-new-component>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <!--heading-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-header">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 not-text-center">
+                            Personal Information
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            Date Join
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            Status
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            Orders
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-body" ng-repeat=" _account in accounts">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 not-text-center">
+                            <p ng-if="_account.first_name != null">{{_account.first_name}} {{_account.last_name}}</p>
+                            <p ng-if="_account.address[0].street != null">{{_account.address[0].street}}, {{_account.address[0].city}}</p>
+                            <p ng-if="_account.phone.mobile != null">{{_account.phone.mobile}}</p>
+                            <p>{{_account.email}}</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            {{getDateJoin(_account)}}
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="color: #009999;">
+                            {{_account.status}}
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            <a class="a-de-cus">
+                                {{_account.orders.length}}
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button type="button" class="btn btn-danger btn-xs btn-no-background" ng-click="showDialogToEdit(_account)" title="Edit this customer" style="margin: 3px;">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </button>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button type="button" class="btn btn-success btn-xs btn-no-background" ng-click="showDetails(_account)" title="Watch more details" style="margin: 3px;">
+                                    Details <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <admin-last-update-component></admin-last-update-component> -->
+</div>

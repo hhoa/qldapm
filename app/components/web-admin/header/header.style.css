@@ -1,0 +1,155 @@
+/* ---------------------- Top navbar -----------------------*/
+#admin-header {
+    margin-bottom: 0;
+    background: #333;
+    z-index: 1;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+}
+
+#admin-header .navbar-li a{
+    color: #c1c1c1;
+}
+
+#admin-header .navbar-ul{
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#admin-header .navbar-li-right{
+    float: right;
+    margin-right: 10px;
+}
+
+#admin-header .navbar-li a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 7px 16px;
+    font-size: 11px;
+}
+
+#admin-header .navbar-li a:hover, #admin-header .navbar-li.active a {
+    color: white !important;
+}
+
+#admin-profile-dropdown{
+    position: absolute;
+    right: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #777;
+    color: white;
+}
+
+#admin-profile-dropdown a{
+    color: white !important;
+    font-weight: bold;
+    text-align: left !important;
+}
+
+/* ------------------- The side navigation menu ---------------------- */
+.sidenav {
+    font-family: Verdana;
+    font-size: 14px;
+    height: 100%; /* 100% Full-height */
+    width: 150px;
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 40px; /* Place content 40px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    padding-left: 32px;
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 25px;
+    font-size: 14px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+.admin-main {
+    font-family: Verdana;
+    font-size: 12px;
+    margin-top: 70px;
+    transition: margin-left .5s;
+    margin-left: 150px;
+}
+
+.admin-footer{
+    font-family: Verdana;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.icon-sidenav{
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .sidenav{
+        width: 0;
+    }
+
+    .icon-sidenav{
+        display: block;
+    }
+
+    .sidenav .closebtn{
+        display: block;
+    }
+
+    .responsive{
+        width: 150px !important;
+    }
+
+    .closenav{
+        width: 0 !important;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .admin-footer {
+        margin-left: 0;
+    }
+
+    .table-header{
+        text-align: left !important;
+    }
+
+    .table-body{
+        display: block !important;
+        text-align: left !important;
+    }
+}

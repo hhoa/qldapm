@@ -1,0 +1,85 @@
+<div class="admin-main container-fluid">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 18px;">Admins Management</p>
+                    <span class="badge">{{countAccount()}}</span>
+                    <add-new-component ng-click="addNewOnClick()"></add-new-component>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <!--heading-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-header">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >
+                            Username
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            Full Name
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            Email
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+
+                        </div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-body" ng-repeat="admin in admins">
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                            {{admin.username}}
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            {{admin.first_name}} {{admin.last_name}}
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            {{admin.email}}
+                        </div>
+                        <div  class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-danger btn-xs btn-no-background" ng-click="showDialogToEdit(admin)" title="Edit this account" style="margin: 3px;">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                            </button>
+                        </div>
+                        <div  class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-success btn-xs btn-no-background" ng-click="showDetails(admin)" title="Show details for this account" style="margin: 3px;">
+                                Details <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modalConfirm" class="modal fade adminModal" role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <p style="font-size: 16px; border-bottom: 1px solid #c1c1c1;">
+                                Are you sure to DELETE this ADMIN <strong>{{currentAdmin.name}}</strong>?
+                            </p>
+                        </div>
+                        <div class="row list-btn-bottom-modal">
+                            <button ng-click="deleteAdmin()">Yes</button>
+                            <button style="background: #848484;" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

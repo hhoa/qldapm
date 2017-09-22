@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="my-app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="my-app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="my-app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="my-app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Việc làm nhanh chóng, tiện lợi</title>
+
+    <base href="/">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/media/cms/base/favicon.png" rel="icon">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../my-app.styles.min.css">
+
+</head>
+<body>
+
+    <div>
+        <header-component></header-component>
+    </div>
+
+    <!--<div ng-if="is_admin === 1">-->
+        <!--<admin-header-component></admin-header-component>-->
+    <!--</div>-->
+
+    <div ng-view></div>
+
+    <div>
+        <footer-component></footer-component>
+    </div>
+
+    <!--<div ng-if="is_admin == 1">-->
+        <!--<admin-footer-component></admin-footer-component>-->
+    <!--</div>-->
+
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/angular-router.min.js"></script>
+
+    <script src="../vendor.bundle.min.js"></script>
+    <script src="../my-app.bundle.min.js"></script>
+
+</body>
+</html>

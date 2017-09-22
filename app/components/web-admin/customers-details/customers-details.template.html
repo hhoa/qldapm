@@ -1,0 +1,164 @@
+<div class="admin-main container-fluid">
+
+    <div class="col-lg-12 col-md-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 14px; !important;">CUSTOMER DETAILS: {{ getFullName() }}</p>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <!--profile-->
+                <div class="row panel-child">
+
+                    <!--title-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="pull-left" style="margin-right: 10px;"><span class="glyphicon glyphicon-user"></span> {{ account.username }}</p>
+                        <p class="pull-left"><span class="glyphicon glyphicon-envelope"></span> {{ account.email }}</p>
+                        <div class="pull-right" style="margin-left: 10px;">
+                            <span class="text-add-new">Delete&nbsp;&nbsp;</span>
+                            <button class="icon-edit" ng-click="deleteAccountClick(account)" data-toggle="modal" data-target="#modalConfirm" title="Delete this account">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <div class="pull-right">
+                            <span class="text-add-new">Edit&nbsp;&nbsp;</span>
+                            <button class="icon-edit" ng-click="showDialogToEdit()">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="modalConfirm" class="modal fade adminModal" role="dialog" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <p style="font-size: 16px; border-bottom: 1px solid #c1c1c1;">
+                                            Are you sure DELETE <strong>{{currentAccount.username}}</strong>?
+                                        </p>
+                                    </div>
+                                    <div class="row list-btn-bottom-modal">
+                                        <button ng-click="deleteAccount()">Yes</button>
+                                        <button style="background: #848484;" data-dismiss="modal">No</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div style="border-bottom: 1px solid #c1c1c1; margin-bottom: 10px;"></div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <dl class="dl-horizontal">
+                            <div ng-if="account.gender" class="dl-row">
+                                <dt>Gender</dt>
+                                <dd>{{ getGender() }}</dd>
+                            </div>
+
+                            <div class="dl-row">
+                                <dt ng-if="getAge()">Age</dt>
+                                <dd ng-if="getAge()">{{ getAge() }} years old (Birthday on {{ getBirthday() }})</dd>
+                            </div>
+
+                            <div ng-if="account.address[0].street" class="dl-row">
+                                <dt>Address</dt>
+                                <dd>{{ getAddress() }} </dd>
+                            </div>
+
+                            <!--<div class="dl-row">
+                                <dt>Last visit</dt>
+                            </div>-->
+
+                            <div class="dl-row">
+                                <dt>Last update</dt>
+                                <dd>{{ getDate(account.last_update) }}</dd>
+                            </div>
+
+                            <div class="dl-row">
+                                <dt>Status</dt>
+                                <dd style="color: #009999;">{{ account.status }}</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!--order-->
+                <div class="row panel-child">
+
+                    <!--title-->
+                    <div class="col-lg-12 col-md-12">
+                        <p class="pull-left"><span class="glyphicon glyphicon-file"></span> ORDERS</p>
+                        <span class="badge" style="margin-left: 10px;">{{orders.length}}</span>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <div style="border-bottom: 1px solid #c1c1c1;"></div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-mg-12 col-sm-12 col-xs-12 table-header">
+                        <div class="col-lg-6 col-mg-6 col-sm-6 col-xs-12 not-text-center">
+                            Order Information
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            Status
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-body" ng-repeat="order in orders">
+                        <div class="col-lg-6 col-mg-6 col-sm-6 col-xs-12 not-text-center">
+                            <p>OrderId: {{order._id}}</p>
+                            <p>Total price: ${{order.totalPrice}}</p>
+                            <p>Created date: {{getDate(order.createdDate)}}</p>
+                            <p ng-show="order.completedDate !== 0">Complete date: {{getDate(order.completedDate)}}</p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="color: #009999;">
+                            {{order.status}}
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <a class="a-de-cus" ng-click="showOrderDetails(order)" title="Watch more details">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--cart-->
+                <div class="row panel-child">
+
+                    <!--title-->
+                    <div class="col-lg-12 col-md-12">
+                        <p class="pull-left"><span class="glyphicon glyphicon-shopping-cart"></span> CARTS</p>
+                        <span class="badge" style="margin-left: 10px;">{{countCarts()}}</span>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <div style="border-bottom: 1px solid #c1c1c1;"></div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <admin-last-update-component></admin-last-update-component> -->
+</div>

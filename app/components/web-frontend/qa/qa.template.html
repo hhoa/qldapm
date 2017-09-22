@@ -1,0 +1,10 @@
+<div class="main-page container qa-page">
+    <p class="title">QA</p>
+    <ul class="list-qa">
+        <li ng-repeat="_qa in qa">
+            <p class="q">{{_qa.q}}</p>
+            <p class="a">{{_qa.a}}</p>
+        </li>
+    </ul>
+    <p ng-if="qa.length <= 1"><a class="a-watch-more" href="/qa">Xem thêm</a></p>
+</div>

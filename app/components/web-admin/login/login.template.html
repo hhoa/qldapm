@@ -1,0 +1,49 @@
+
+<div class="admin-login-form" ng-controller="AdminLoginController">
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <div class="text-center">
+                <p style="font-weight: bold; font-family: Lora; font-size: 26px; color: #4B4C4C;">Florist</p>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <p class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label" for="userName">Username </p>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <input type="text" id="userName" name="userName" class="form-control input-md" ng-model="userName" autofocus/>
+                    <div ng-show="userNameErr">
+                        <p class="text-italic-err">{{userNameErr}}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <p class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label" for="password">Password </p>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <input type="password" id="password" name="password" class="form-control input-md" ng-model="password" />
+                    <div ng-show="passwordErr">
+                        <p class="text-italic-err">{{passwordErr}}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <p class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label" for="btn-login"></p>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <button id="btn-login" class="btn-add-new" ng-click="login()">Login</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>

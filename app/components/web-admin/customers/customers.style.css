@@ -1,0 +1,18 @@
+
+.input-gender{  width: auto !important;  position: relative !important;  top: 2px !important;  }
+
+.list-btn-bottom-modal button{
+    color: #fff;
+    background-color: #5bc0de;
+    border: none;
+    padding: 7px 15px 7px 15px;
+    margin-right: 10px;
+    margin-top: 20px;
+    min-width: 60px;
+    min-height: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    vertical-align: middle;
+    outline: none;
+}

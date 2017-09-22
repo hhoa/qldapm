@@ -1,0 +1,75 @@
+<div class="admin-main container-fluid">
+
+    <div class="col-lg-12 col-md-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 14px; !important;">ACCOUNTS DETAILS: {{admin.first_name}} {{admin.last_name}}</p>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <!--profile-->
+                <div class="row panel-child">
+
+                    <!--title-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="pull-right">
+                            <span class="text-add-new">Delete&nbsp;&nbsp;</span>
+                            <button class="icon-edit" ng-click="deleteAccountClick(admin)" data-toggle="modal" data-target="#modalConfirm" title="Delete this account">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <div class="pull-right" style="margin-right: 10px;">
+                            <span class="text-add-new">Edit&nbsp;&nbsp;</span>
+                            <button class="icon-edit" ng-click="showDialogToEdit()">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="modalConfirm" class="modal fade adminModal" role="dialog" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <p style="font-size: 16px; border-bottom: 1px solid #c1c1c1;">
+                                            Are you sure to DELETE this account <strong>{{currentAccount.username}}</strong>?
+                                        </p>
+                                    </div>
+                                    <div class="row list-btn-bottom-modal">
+                                        <button ng-click="deleteAccount()">Yes</button>
+                                        <button style="background: #848484;" data-dismiss="modal">No</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div style="border-bottom: 1px solid #c1c1c1; margin-bottom: 10px;"></div>
+                    </div>
+                    <!--body-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <dl class="dl-horizontal">
+                            <div class="dl-row">
+                                <dt>Username</dt>
+                                <dd>{{ admin.username }}</dd>
+                            </div>
+
+                            <div class="dl-row">
+                                <dt>Email</dt>
+                                <dd>{{ admin.email }} </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

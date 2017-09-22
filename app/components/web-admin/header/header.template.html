@@ -1,0 +1,28 @@
+<!-- navbar fix top -->
+<nav class='navbar navbar-default navbar-fixed-top' id='admin-header'>
+    <div class='container-fluid'>
+        <ul class="list-unstyled navbar-ul">
+            <li class="navbar-li navbar-li-left"><span class="icon-sidenav pull-left">&#9776;</span></li>
+            <li class="navbar-li navbar-li-right"><a ng-click="logout()">Logout</a></li>
+            <li class="navbar-li navbar-li-right">
+                <a>Hi, </span> {{userInfo.userName}}</a>
+            </li>
+            <li class="navbar-li navbar-li-right"><a ng-click="home()">FLORIST</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- side nav -->
+<div id="adminSide" class="sidenav">
+    <a class="closebtn">&times;</a>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/admins">Admins</a>
+    <a href="/admin/customers">Customers</a>
+    <a href="/admin/products">Products</a>
+    <a href="/admin/orders">Orders</a>
+    <!--<a href="/admin/preferences" style="color: #fff;">Preferences</a>-->
+    <a href="/admin/categories">Categories</a>
+    <a href="/admin/pages">Page</a>
+    <a href="/admin/faq">FAQs</a>
+
+</div>

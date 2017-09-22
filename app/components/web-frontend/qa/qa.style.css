@@ -1,0 +1,15 @@
+.qa-page .list-qa {
+    padding-left: 0;
+}
+
+.qa-page .list-qa .q {
+    font-size: 15px;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.qa-page .list-qa .a {
+    font-size: 13px;
+    color: #777;
+}

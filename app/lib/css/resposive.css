@@ -1,0 +1,9 @@
+@media only screen and (max-width: 767px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .home-title-employer {
+        margin-top: 30px;
+    }
+}

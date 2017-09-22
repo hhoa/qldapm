@@ -1,0 +1,277 @@
+<div class="admin-main container-fluid" ng-controller="AdminCustomerFormController">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <p class="pull-left" style="font-size: 14px; !important;">{{ title_modal }}</p>
+                    <div ng-show="!isAddNew" class="col-lg-4 col-md-4 pull-right">
+
+                        <div class="btn-text-horizontal">
+                            <div class="row">
+                                <button class="icon-edit" type="submit" ng-click="deleteAccount()">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 5px;">
+                                <span class="text-add-new">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div ng-if="account || isAddNew " id="info" class="col-lg-12 col-md-12 acc_info">
+
+                        <form name="accountForm" class="accountForm">
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Gender<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-6">
+                                            <input id="gender_male" class="input-gender" name="gender" type="radio" ng-click="maleChecked($event)" ng-model="gender" ng-checked="gender" value="male"> &nbsp;Male
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input id="gender_female" class="input-gender" name="gender" type="radio" ng-click="femaleChecked($event)" ng-model="gender" ng-checked="gender" value="female"> &nbsp;Female
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div ng-if="genderErr" class="text-err">Gender is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Firstname<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_firstname" type="text" ng-value="account.first_name"
+                                                   ng-model="account.first_name"
+                                                   ng-keyup="validFirstname()" autofocus>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="fnameErr" class="text-err">{{curFnameErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Lastname<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_lastname" type="text" ng-value="account.last_name"
+                                                   ng-model="account.last_name"
+                                                   ng-keyup="validLastName()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="lnameErr" class="text-err">{{curLnameErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Username<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_username" type="text" ng-value="account.username"
+                                                   ng-keyup="validUsername()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="usernameErr" class="text-err">{{curUsernameErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Password<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_password" type="password" ng-value="account.password"
+                                                   ng-model="account.password"
+                                                   ng-keyup="validPassword()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="passwordErr" class="text-err">{{curPasswordErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Birthday</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input type="date" ng-model="birth_day" ng-change="minAge(birth_day)" min="18"
+                                                   style="height: 30px;">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="birthdayErr" class="text-err">{{curBirthdayErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Email<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input  id="txt_email" type="text" name="email" ng-value="account.email"
+                                                    ng-model="account.email" ng-keyup="validEmail()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="emailErr" class="text-err">{{curEmailErr }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Phone<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_phonenumber" type="text" ng-value="account.phone.mobile"
+                                                   ng-model="account.phone.mobile"
+                                                   ng-keyup="validPhone()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="phoneErr" class="text-err">{{curPhoneErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Company</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input  id="txt_company" type="text" ng-value="account.company"
+                                                    ng-model="account.company">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">VAT</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_vat" type="text" ng-value="account.VAT"
+                                                   ng-model="account.VAT">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="col-md-12">
+                                        <p style="border-bottom: 1px solid #c1c1c1; padding-bottom: 5px;">Address</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- các trường của địa chỉ -->
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="col-md-3">Street</div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_address_street" type="text" ng-value="account.address[0].street"
+                                                   ng-model="account.address[0].street"
+                                                   ng-keyup="validAddressStreet()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="addressErr.street" class="text-err">{{curAddressErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">Floor</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_address_floor" type="text" ng-value="account.address[0].floor"
+                                                   ng-model="account.address[0].floor">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row field">
+                            </div>
+
+                            <div class="row field">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="col-md-3">City<span class="required"></span></p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <input id="txt_address_city" type="text" ng-value="account.address[0].city"
+                                                   ng-model="account.address[0].city"
+                                                   ng-keyup="validAddressCity()">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div ng-if="addressErr.city" class="text-err">{{curAddressErr}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--hết các trường của địa chỉ-->
+
+                            <div class="row field" style="margin-top: 20px; !important;">
+                                <div class="col-lg-6 col-md-6">
+                                    <p id="lbl_usertype" class="col-md-3">User Type</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <select ng-options="type for type in types"
+                                                    ng-model="selectedUTypes" ng-change="selectUTypeChange(selectedUTypes)">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <p id="lbl_status2" class="col-md-3">Status</p>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                            <select ng-model="selectedUStatus" ng-change="selectUStatusChange(selectedUStatus)">
+                                                <option value="Active">Active</option>
+                                                <option value="Deactive">Deactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="row list-btn-bottom-modal field">
+                    <div class="col-lg-10 col-md-10">
+                        <button ng-if="isAddNew" class="pull-left" type="submit" ng-click="addNewAccount()">Add</button>
+                        <button ng-if="!isAddNew" class="pull-left" type="submit" ng-click="updateAccount()">Update</button>
+                        <button type="submit" class="pull-left" ng-click="closeDetail()"
+                                style="background-color: #848484; margin-left: 20px !important;">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

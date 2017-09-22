@@ -1,0 +1,113 @@
+<div class="admin-main container-fluid" ng-controller="AdminCmsFormController">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+
+                    <p class="pull-left" style="font-size: 14px; !important;">{{ title_modal }}</p>
+                    <div ng-show="!isAddNew" class="col-lg-4 col-md-4 pull-right">
+
+                        <div class="btn-text-horizontal">
+                            <div class="row">
+                                <button class="icon-edit" type="submit" ng-click="delete()">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 5px;">
+                                <span class="text-add-new">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div ng-if="currentCms || isAddNew" id="info" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                         style="padding: 10px;">
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Title</p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <input id="txt_title" type="text" name="name" ng-model="currentCms.title">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Url<span class="required">*</span></p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <input id="txt_url" type="text" name="url" ng-model="currentCms.url">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div ng-if="urlErr" class="text-err">{{urlErr}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Content<span class="required">*</span></p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <textarea id="txt_content" type="text" name="txt_content" rows="20">{{currentCms.content}}</textarea>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div ng-if="contentErr" class="text-err">{{contentErr}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Meta Keywords</p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <textarea id="txt_meta_keyword" type="text" name="meta_keyword" rows="5">{{currentCms.meta_keyword}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Meta Descriptions</p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <textarea id="txt_meta_des" type="text" name="meta_des" rows="5">{{currentCms.meta_des}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row field">
+                            <p class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Status</p>
+                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <select ng-model="selectedStatus" ng-change="statusSelect(selectedStatus)" style="width: auto;">
+                                        <option value="Enabled">Enabled</option>
+                                        <option value="Disabled">Disabled</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row list-btn-bottom-modal">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <button ng-show="isAddNew" class="pull-left" type="submit" ng-click="add()">Add</button>
+                                <button ng-show="!isAddNew" class="pull-left" type="submit" ng-click="update()">Update</button>
+                                <button type="submit" class="pull-left" ng-click="close()"
+                                        style="background: #848484; margin-left: 20px !important;">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

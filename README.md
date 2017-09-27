@@ -107,7 +107,7 @@ server
     api.js
   server.js
 package.json
-webpack.json
+webpack.config.js
 ```
 
 

@@ -6,7 +6,13 @@ let app = angular.module('my-app', [
     'my-app.footer',
     'my-app.home',
     'my-app.404',
-    'my-app.sign-up'
+    'my-app.sign-up',
+    'my-app.sign-up.employee',
+    'my-app.sign-up.employer',
+    'florist.cat.viec-lam-chuyen-mon',
+    'florist.cat.lao-dong-pho-thong',
+    'florist.cat.sinh-vien',
+    'florist.login'
 ]);
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -18,9 +24,39 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
             controller: 'homeCtrl'
         },
         {
+            url: '/dang-nhap',
+            templateUrl: 'app/components/web-frontend/login/login.template.html',
+            controller: 'LoginController'
+        },
+        {
             url: '/dang-ky',
             templateUrl: 'app/components/web-frontend/sign-up/sign-up.template.html',
             controller: 'signUpController'
+        },
+        {
+            url: '/dang-ky/nha-tuyen-dung',
+            templateUrl: 'app/components/web-frontend/sign-up/employer/sign-up.template.html',
+            controller: 'signUpEmployerController'
+        },
+        {
+            url: '/dang-ky/nguoi-tim-viec',
+            templateUrl: 'app/components/web-frontend/sign-up/employee/sign-up.template.html',
+            controller: 'signUpEmployeeController'
+        },
+        {
+            url: '/viec-lam-chuyen-mon',
+            templateUrl: 'app/components/web-frontend/category/viec-lam-chuyen-mon/viec-lam-chuyen-mon.template.html',
+            controller: 'vlcmCategoryController'
+        },
+        {
+            url: '/lao-dong-pho-thong',
+            templateUrl: 'app/components/web-frontend/category/lao-dong-pho-thong/lao-dong-pho-thong.template.html',
+            controller: 'ldptCategoryController'
+        },
+        {
+            url: '/sinh-vien-ban-thoi-gian',
+            templateUrl: 'app/components/web-frontend/category/sinh-vien/sinh-vien.template.html',
+            controller: 'svCategoryController'
         }
     ];
 

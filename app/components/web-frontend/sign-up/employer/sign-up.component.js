@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('my-app.sign-up.employer', [])
-    .controller('singUpEmployerController', ['$scope', '$http', '$location', '$window', 'customerAuthentication', 'customScopes',
+    .controller('signUpEmployerController', ['$scope', '$http', '$location', '$window', 'customerAuthentication', 'customScopes',
         function ($scope, $http, $location, $window, customerAuthentication, customScopes){
 
             $window.document.title = "Nhà tuyển dụng/ Người tìm việc - Đăng ký";

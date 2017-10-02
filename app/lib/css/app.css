@@ -17,7 +17,13 @@ a:visited {
 
 input {  padding: 3px; border: 1px solid #cecece; }
 
-textarea { border: 1px solid #cecece; }
+textarea { border: 1px solid #cecece; border-radius: 4px; }
+
+select {
+  padding: 5px 10px;
+  border-color: #cecece;
+  border-radius: 4px;
+}
 
 input:focus,
 textarea:focus {

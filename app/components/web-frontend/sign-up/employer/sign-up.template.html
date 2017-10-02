@@ -1,0 +1,145 @@
+<div class="container customer-signup-form main-page" ng-controller="signUpEmployerController">
+
+    <p class="title field">Nhà tuyển dụng - Đăng kí</p>
+
+
+    <p class="title_upper_15_777">Thông tin tài khoản</p>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Email<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="email" id="email" placeholder="Ví dụ: abc@gmail.com">
+                <!-- <p style="font-style: italic;">Địa chỉ email này dùng để đăng nhập!</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Tên người liên hệ<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="name" id="name" placeholder="Ví dụ: Nguyễn Văn A">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Điện thoại liên hệ<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="phone" id="phone" placeholder="Ví dụ: 01649693492">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Mật khẩu<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="password" id="password" placeholder="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Nhập lại mật khẩu<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="cfm_password" id="cfm_password" placeholder="">
+            </div>
+        </div>
+    </div>
+
+    <p class="title_upper_15_777" style="margin-top: 30px;">Thông tin công ty</p>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Tên công ty<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="cty_name" id="cty_name" placeholder="Ví dụ: Công ty TNHH ABC">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Điện thoại cố định<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="cty_phone" id="cty_phone" placeholder="Ví dụ: 083942325">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Giới thiệu về công ty<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <textarea id="cty_des" name="cty_des" rows="10" style="width: 100%;" placeholder="Cung cấp thông tin cơ bản như ngày thành lập, hoạt động, thành tựu,..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Địa chỉ công ty<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="cty_address" id="cty_address" placeholder="Ví dụ: Số nhà, Đường, Phường, Quận">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Tỉnh/Thành phố<span class="required-frontend">*</span></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <select id="cty_state" name="cty_state">
+                    <option>Chọn tỉnh thành</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <p>Website</p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="cty_website" id="cty_website" placeholder="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row field-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <p><a class="a-button a-button-1">ĐĂNG KÝ</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
